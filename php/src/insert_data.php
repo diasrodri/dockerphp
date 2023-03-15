@@ -3,7 +3,7 @@
 <?php
 
 // The MySQL service named in the docker-compose.yml.
-$host = 'db';
+$host = 'dbct';
 // Database use name
 $user = 'radias';
 //database user password

@@ -1,8 +1,8 @@
 <?php
-//These are the defined authentication environment in the db service
+//These are the defined authentication environment in the dbct service
 
 // The MySQL service named in the docker-compose.yml.
-$host = 'db';
+$host = 'dbct';
 
 // Database use name
 $user = 'radias';

@@ -1,7 +1,7 @@
 version: '3.8'
 services:      
-  db:
-    container_name: db
+  dbct:
+    container_name: dbct
     image: mysql
     restart: always
     environment:
@@ -12,7 +12,7 @@ services:
     ports:
         - "9906:3306"
     volumes:
-        - ./php/db:/docker-entrypoint-initdb.d
+        - ./php/dbct:/docker-entrypoint-initdb.d
 
   php-apache-environment:
     container_name: php-apache
@@ -20,7 +20,7 @@ services:
         context: ./php
         dockerfile: Dockerfile
     depends_on:
-        - db
+        - dbct
     volumes:
       - ./php/src:/var/www/html/
     ports:
@@ -32,6 +32,6 @@ services:
         - '8080:80'
     restart: always
     environment:
-        PMA_HOST: db
+        PMA_HOST: dbct
     depends_on:
-        - db
+        - dbct

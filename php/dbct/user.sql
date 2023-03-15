@@ -9,9 +9,4 @@ create table `caixatermica` (
     primary key (id)
 );
 insert into `caixatermica` (reg_date, t1, t2, t3, cur) values
-    (CURRENT_TIMESTAMP,"12.97","12.97","12.97","12.97"),
-    (CURRENT_TIMESTAMP,"12.97","12.97","12.97","12.97"),
-    (CURRENT_TIMESTAMP,"12.97","12.97","12.97","12.97"),
-    (CURRENT_TIMESTAMP,"12.97","12.97","12.97","12.97"),
-    (CURRENT_TIMESTAMP,"12.97","12.97","12.97","12.97"),
-    (CURRENT_TIMESTAMP,"12.97","12.97","12.97","12.97");
+    (CURRENT_TIMESTAMP,"0.0","0.0","0.0","0.0");

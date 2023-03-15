@@ -27,8 +27,9 @@ if ($result = $conn->query($sql)) {
 
 foreach ($users as $user) {
     echo "<br>";
-    $stringData = $user->id." ".$user->username." ".$user->password;
-    $stringData = $stringData . " ".$user->reg_date." ".$user->val1." ".$user->val2." ".$user->val3;
+    $stringData = $user->id . " " . $user->reg_date;
+    $stringData = $stringData . " " . $user->t1 . " " . $user->t2;
+    $stringData = $stringData . " " . $user->t3. " " . $user->cur;
     echo $stringData;
     echo "<br>";
 

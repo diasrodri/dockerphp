@@ -40,14 +40,20 @@ echo $datef;
 echo "<br>";
 
 $sql = "INSERT INTO `caixatermica` ";
-$sql = $sql . "(`username`, `password`, `val1`, `val2`, `val3`) VALUES ";
-$sql = $sql . "('$_GET[user]','$_GET[pass]','$_GET[v1]','$_GET[v2]','$_GET[v3]')";
+$sql = $sql . "(`reg_date`, `t1`, `t2`, `t3`, `cur`) VALUES ";
+$sql = $sql . "('$datef','$_GET[t1]','$_GET[t2]','$_GET[t3]','$_GET[cur]')";
 
 if (mysqli_query($link,$sql))
   {
   echo "1 record added" . PHP_EOL;
   echo "<br>";
-  echo 'v1=' . htmlspecialchars($_GET["v1"]) . ' v2=' . htmlspecialchars($_GET["v2"]) . '!';
+  echo 'reg_date=' . $datef . ', ' . PHP_EOL;
+  echo 't1=' . htmlspecialchars($_GET["t1"]) . ', ' . PHP_EOL;
+  echo 't2=' . htmlspecialchars($_GET["t2"]) . ', ' . PHP_EOL;
+  echo 't3=' . htmlspecialchars($_GET["t3"]) . ', ' . PHP_EOL;
+  echo 'cur=' . htmlspecialchars($_GET["cur"]) . ' !' . PHP_EOL;
+
+
   // echo 'v1=',$_GET[v1],' v2=',$_GET[v2],' v3=',$_GET[v3], 'cu=',$_GET[cu] . PHP_EOL;
   echo "<br>";
   }else

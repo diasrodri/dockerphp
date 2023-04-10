@@ -51,7 +51,7 @@ const char *password1 = "petinhos";
 const char* ssid2 = "depfis02"; 
 const char* password2 = "eqdEhBNH";
 
-const char* ssid3 = "RedmiRadias"; 
+const char* ssid3 = "radias_redmi11s"; 
 const char* password3 = "12345677";
 
 const char* ssid4 = "labapli"; 

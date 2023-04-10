@@ -15,3 +15,7 @@ Detalhes do desenvolvimento pode ser encontrado no site:
 
 https://www.ufjf.br/rodrigo_dias/pesquisa/ufjf/docker/php-websites-usando-docker-containers-com-php-apache-e-mysql/
 
+Para ler o arquivo web_ctr.txt eu tive de executar o seguinte comando no servidor.
+
+$chown -R www-data:www-data *
+

@@ -169,7 +169,7 @@ void setup() {
  }
 
  void Control(String payload1){
-  if (payload1=="PoffBoffCoff\n") {
+  if (payload1=="PoffBoffCoff") {
     Serial.println("000");
     digitalWrite(Pel, LOW); // ativa o pino digital 13
     Serial.println(digitalRead(Pel));
@@ -178,7 +178,7 @@ void setup() {
     digitalWrite(Col, LOW); // ativa o pino digital 13
     Serial.println(digitalRead(Bom));
   }
-  if (payload1=="PoffBoffCon\n" ) {
+  if (payload1=="PoffBoffCon" ) {
     //Serial.println("001");
     digitalWrite(Pel, LOW); // ativa o pino digital 13
     //Serial.println(digitalRead(Pel));
@@ -187,7 +187,7 @@ void setup() {
     digitalWrite(Col, HIGH); // ativa o pino digital 13
     //Serial.println(digitalRead(Col));
     }
-  if (payload1=="PoffBonCoff\n" ) {
+  if (payload1=="PoffBonCoff" ) {
     //Serial.println("010");
     digitalWrite(Pel, LOW); // ativa o pino digital 13
     //Serial.println(digitalRead(Pel));
@@ -196,7 +196,7 @@ void setup() {
     digitalWrite(Col, LOW); // ativa o pino digital 13
     //Serial.println(digitalRead(Col));
     }
-  if (payload1=="PoffBonCon\n" ) {
+  if (payload1=="PoffBonCon" ) {
     //Serial.println("011");
     digitalWrite(Pel, LOW); // ativa o pino digital 13
     //Serial.println(digitalRead(Pel));
@@ -205,7 +205,7 @@ void setup() {
     digitalWrite(Col, HIGH); // ativa o pino digital 13
     //Serial.println(digitalRead(Col));
     }    
-  if (payload1=="PonBoffCoff\n"  ) {
+  if (payload1=="PonBoffCoff"  ) {
     //Serial.println("100");
     digitalWrite(Pel, HIGH); // ativa o pino digital 13
     //Serial.println(digitalRead(Pel));
@@ -214,7 +214,7 @@ void setup() {
     digitalWrite(Col, LOW); // ativa o pino digital 13
     //Serial.println(digitalRead(Col));
     }
-  if (payload1=="PonBoffCon\n"  ) {
+  if (payload1=="PonBoffCon"  ) {
     //Serial.println("101");
     digitalWrite(Pel, HIGH); // ativa o pino digital 13
     //Serial.println(digitalRead(Pel));
@@ -223,7 +223,7 @@ void setup() {
     digitalWrite(Col, HIGH); // ativa o pino digital 13
     //Serial.println(digitalRead(Col));
     }
-   if (payload1=="PonBonCoff\n"  ) {
+   if (payload1=="PonBonCoff"  ) {
     //Serial.println("110");
     digitalWrite(Pel, HIGH); // ativa o pino digital 13
     //Serial.println(digitalRead(Pel));
@@ -232,7 +232,7 @@ void setup() {
     digitalWrite(Col, LOW); // ativa o pino digital 13
     //Serial.println(digitalRead(Col));
     }
-   if (payload1=="PonBonCon\n"  ) {
+   if (payload1=="PonBonCon"  ) {
     Serial.println("111");
     digitalWrite(Pel, HIGH); // ativa o pino digital 13
     Serial.println(digitalRead(Pel));
@@ -322,7 +322,7 @@ void loop() {
  
   Serial.println(httpCode1);   //Print HTTP return code
   Serial.print("payload1=");
-  payload1="PonBonCon\n";
+  //payload1="PonBonCon\n";
   Serial.println(payload1);    //Print request response payload
 
   Control(payload1);

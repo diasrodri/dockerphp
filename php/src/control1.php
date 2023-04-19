@@ -85,9 +85,13 @@ reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 
 if ($conn->query($sql) === TRUE) {
+  echo "<br>";
   echo "Table MyGuests created successfully";
+  echo "<br>";
 } else {
+  echo "<br>";
   echo "Error creating table: " . $conn->error;
+  echo "<br>";
 }
 
 $conn->close();

@@ -37,7 +37,7 @@ $user = 'radias';
 $pass = 'radias';
 
 // database name
-$mydatabase = 'Exp';
+$mydatabase = 'caixatermica';
 // check the mysql connection status
 
 $conn = new mysqli($host, $user, $pass, $mydatabase);

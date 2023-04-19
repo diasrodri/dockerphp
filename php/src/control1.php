@@ -47,10 +47,17 @@ $conn = new mysqli($host, $user, $pass, $mydatabase);
 $sql = 'SHOW TABLES FROM caixatermica';
 
 if ($result = $conn->query($sql)) {
-    while ($data = $result->fetch_object()) {
-        $users[] = $data;
-        echo $data;
+    if (!$result) {
+        echo "DB Error, could not list tables\n";
+        echo 'MySQL Error: ' . mysql_error();
+        exit;
     }
+    
+    while ($row = mysql_fetch_row($result)) {
+        echo "Table: {$row[0]}\n";
+    }
+    
+    mysql_free_result($result);
 }
 
 

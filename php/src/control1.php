@@ -51,15 +51,8 @@ $sql="insert into caixatermica (reg_date, t1, t2, t3, cur) values (CURRENT_TIMES
 $conn->query($sql);
 printf("Table myCity successfully created.\n");
 
-sql="insert into caixatermica (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
+sql="SHOW TABLES FROM caixatermica";
 $conn->query($sql);
-printf("Table myCity successfully created.\n");
-
-$sql = "SHOW TABLES FROM caixatermica";
-$conn->query($sql);
-printf("SHOW TABLES FROM caixatermica.\n");
-
-
 
 ?>
 

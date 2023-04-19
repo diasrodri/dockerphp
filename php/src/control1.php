@@ -34,6 +34,17 @@ $pass = 'radias';
 $mydatabase = 'caixatermica';
 $conn = new mysqli($host, $user, $pass, $mydatabase);
 
+
+if($stmt = $connection->query("SHOW TABLES")){
+    echo "No of records : ".$stmt->num_rows."<br>";
+    while ($row = $stmt->fetch_array()) {
+  echo $row[0]."<br>";
+    }
+  }else{
+  echo $connection->error;
+  }
+  
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -94,6 +105,8 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
+
 
 
 

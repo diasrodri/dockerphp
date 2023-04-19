@@ -44,7 +44,7 @@ $conn->query($sql);
 printf("Table myCity successfully created.\n");
 
 
-$sql = "CREATE TABLE Exp1 (
+$sql = "CREATE TABLE Exp2 (
 id int not null auto_increment,
 reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 t1 FLOAT NOT NULL,
@@ -60,7 +60,7 @@ if ($conn->query($sql) === TRUE) {
   echo "Error creating table: " . $conn->error;
 }
 
-$sql="insert into Exp1 (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
+$sql="insert into Exp2 (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
 $conn->query($sql);
 printf("Table myCity successfully created.\n");
 

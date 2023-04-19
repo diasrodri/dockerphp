@@ -60,6 +60,10 @@ if ($conn->query($sql) === TRUE) {
   echo "Error creating table: " . $conn->error;
 }
 
+$sql="insert into Exp1 (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
+$conn->query($sql);
+printf("Table myCity successfully created.\n");
+
 $conn->close();
 
 ?>

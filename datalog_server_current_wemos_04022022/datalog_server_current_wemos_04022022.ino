@@ -312,7 +312,7 @@ void loop() {
  
   http.end();  //Close connection
 ///*//=======================================================================
-  Link1 = "/caixatermica/control.php";
+  Link1 = "/control1.php";
   Serial.println(Link1);
   
   http.begin(wifiClient, host, port, Link1);     //Specify request destination
@@ -320,8 +320,8 @@ void loop() {
   int httpCode1 = http.GET();            //Send the request
   String payload1 = http.getString();    //Get the response payload
  
- // Serial.println(httpCode1);   //Print HTTP return code
- // Serial.print("payload1=");
+  Serial.println(httpCode1);   //Print HTTP return code
+  Serial.print("payload1=");
  // Serial.println(payload1);    //Print request response payload
 
   Control(payload1);

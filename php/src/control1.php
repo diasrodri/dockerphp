@@ -42,7 +42,8 @@ if ($conn->connect_error) {
 
 $sql="insert into Exp4 (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
 $conn->query($sql);
-echo "Table myCity successfully created" . PHP_EOL;
+
+echo "Table myCity successfully created" ."<br>";
 
 
 if($stmt = $conn->query("SHOW TABLES")){

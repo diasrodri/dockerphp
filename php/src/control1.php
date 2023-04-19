@@ -47,12 +47,16 @@ $conn = new mysqli($host, $user, $pass, $mydatabase);
 $sql = 'SHOW TABLES FROM caixatermica';
 
 if ($result = $conn->query($sql)) {
+
     while ($data = $result->fetch_object()) {
         $users[] = $data;
     }
+
+    while ($row = mysql_fetch_row($result)) {
+        echo "Table: {$row[0]}\n";
+    }
 }
 
-mysql_free_result($result);
 
 
 ?>

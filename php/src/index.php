@@ -38,15 +38,15 @@ foreach ($users as $user) {
 echo "<br>";
 
 // select query
-$sql = 'SELECT * FROM Exp4';
+$sql = "SELECT * FROM Exp4";
 
 if ($result = $conn->query($sql)) {
-    while ($data = $result->fetch_object()) {
-        $users[] = $data;
+    while ($data1 = $result->fetch_object()) {
+        $users1[] = $data1;
     }
 }
 
-foreach ($users as $user) {
+foreach ($users1 as $user) {
     echo "<br>";
     $stringData = $user->id . " " . $user->reg_date;
     $stringData = $stringData . " " . $user->t1 . " " . $user->t2;

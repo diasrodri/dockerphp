@@ -29,24 +29,38 @@ fclose($myfile);
 
 // The MySQL service named in the docker-compose.yml.
 $host = 'dbct';
-
-// Database use name
 $user = 'radias';
-
-//database user password
 $pass = 'radias';
-
-// database name
 $mydatabase = 'caixatermica';
-// check the mysql connection status
-
 $conn = new mysqli($host, $user, $pass, $mydatabase);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
 $sql="insert into caixatermica (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
 $conn->query($sql);
 printf("Table myCity successfully created.\n");
 
 
+$sql = "CREATE TABLE Exp1 (
+id int not null auto_increment,
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+t1 FLOAT NOT NULL,
+t2 FLOAT NOT NULL,
+t3 FLOAT NOT NULL,
+cur FLOAT NOT NULL,
+primary key (id)
+)";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table MyGuests created successfully";
+} else {
+  echo "Error creating table: " . $conn->error;
+}
+
+$conn->close();
 
 ?>
 

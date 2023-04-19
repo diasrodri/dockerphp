@@ -37,7 +37,7 @@ $user = 'radias';
 $pass = 'radias';
 
 // database name
-$mydatabase = 'caixatermica';
+$mydatabase = 'Exp';
 // check the mysql connection status
 
 $conn = new mysqli($host, $user, $pass, $mydatabase);
@@ -47,27 +47,20 @@ $conn = new mysqli($host, $user, $pass, $mydatabase);
 $conn->query("CREATE TEMPORARY TABLE Exp1 LIKE caixatermica");
 printf("Table Exp1 successfully created.\n");
 
+$conn->query(" create table `Exp` (
+    id int not null auto_increment,
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    t1 FLOAT NOT NULL,
+    t2 FLOAT NOT NULL,
+    t3 FLOAT NOT NULL,
+    cur FLOAT NOT NULL,
+    primary key (id)
+);
+");
 
-// select query
-$sql = 'SELECT * FROM Exp1';
-
-if ($result = $conn->query($sql)) {
-    while ($data = $result->fetch_object()) {
-        $users[] = $data;
-    }
-}
-
-foreach ($users as $user) {
-    echo "<br>";
-    $stringData = $user->id . " " . $user->reg_date;
-    $stringData = $stringData . " " . $user->t1 . " " . $user->t2;
-    $stringData = $stringData . " " . $user->t3. " " . $user->cur;
-    echo $stringData;
-    echo "<br>";
-
-}
-
-
+$conn->query("insert into `Exp` (reg_date, t1, t2, t3, cur) values
+    (CURRENT_TIMESTAMP,"0.0","0.0","0.0","0.0");
+    ");
 ?>
 
 </body>

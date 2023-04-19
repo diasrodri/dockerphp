@@ -1,5 +1,5 @@
-drop table if exists `Exp`;
-create table `Exp` (
+drop table if exists `caixatermica`;
+create table `caixatermica` (
     id int not null auto_increment,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     t1 FLOAT NOT NULL,
@@ -8,5 +8,5 @@ create table `Exp` (
     cur FLOAT NOT NULL,
     primary key (id)
 );
-insert into `Exp` (reg_date, t1, t2, t3, cur) values
+insert into `caixatermica` (reg_date, t1, t2, t3, cur) values
     (CURRENT_TIMESTAMP,"0.0","0.0","0.0","0.0");

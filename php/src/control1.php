@@ -45,8 +45,12 @@ $conn = new mysqli($host, $user, $pass, $mydatabase);
 // select query
 //$sql = 'SELECT * FROM caixatermica';
 $sql = 'SHOW TABLES FROM caixatermica';
-$result = mysql_query($sql);
 
+if ($result = $conn->query($sql)) {
+    while ($data = $result->fetch_object()) {
+        $users[] = $data;
+    }
+}
 
 
 ?>

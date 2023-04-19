@@ -47,9 +47,9 @@ $conn = new mysqli($host, $user, $pass, $mydatabase);
 $conn->query("CREATE TEMPORARY TABLE Exp1 LIKE caixatermica");
 printf("Table myCity successfully created.\n");
 
-$conn->query("insert into `caixatermica` (reg_date, t1, t2, t3, cur) values
-    (CURRENT_TIMESTAMP,"0.0","0.0","0.0","0.0");
-    ");
+$sql="insert into caixatermica (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
+$conn->query($sql);
+printf("Table myCity successfully created.\n");
 
 
 ?>

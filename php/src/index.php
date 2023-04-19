@@ -38,7 +38,7 @@ foreach ($users as $user) {
 echo "<br>";
 
 // select query
-$sql = 'SELECT * FROM Exp2';
+$sql = 'SELECT * FROM Exp4';
 
 if ($result = $conn->query($sql)) {
     while ($data = $result->fetch_object()) {

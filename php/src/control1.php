@@ -41,17 +41,25 @@ $mydatabase = 'caixatermica';
 // check the mysql connection status
 
 $conn = new mysqli($host, $user, $pass, $mydatabase);
+//$mysqli = new mysqli("localhost", "my_user", "my_password", "world");
+
+/* Create table doesn't return a resultset */
+$conn->query("CREATE TEMPORARY TABLE Exp1 LIKE caixatermica");
+printf("Table Exp1 successfully created.\n");
+
+/* Select queries return a resultset */
+$result = $mysqli->query("SELECT * FROM Exp1");
+printf("Select returned %d rows.\n", $result->num_rows);
+
 
 // select query
 //$sql = 'SELECT * FROM caixatermica';
 $sql = 'SHOW TABLES FROM caixatermica';
 
 if ($result = $conn->query($sql)) {
-
     while ($data = $result->fetch_object()) {
         $users[] = $data;
     }
-
 }
 
 

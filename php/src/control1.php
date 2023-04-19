@@ -52,6 +52,13 @@ if ($result = $conn->query($sql)) {
     }
 }
 
+foreach ($users as $user) {
+    echo "<br>";
+    $stringData = $user->id;
+    echo $stringData;
+    echo "<br>";
+
+}
 
 ?>
 

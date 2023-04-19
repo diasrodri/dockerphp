@@ -46,6 +46,7 @@ printf("Table myCity successfully created.\n");
 
 
 if($stmt = $conn->query("SHOW TABLES")){
+    echo "----"."<br>";
     echo "No of records : ".$stmt->num_rows."<br>";
     while ($row = $stmt->fetch_array()) {
   echo $row[0]."<br>";

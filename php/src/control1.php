@@ -43,14 +43,9 @@ $mydatabase = 'caixatermica';
 $conn = new mysqli($host, $user, $pass, $mydatabase);
 //$mysqli = new mysqli("localhost", "my_user", "my_password", "world");
 
-$sql="create table Exp1 (
-    id int not null auto_increment,
+$sql="create table Exp1 (id int not null auto_increment,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    t1 FLOAT NOT NULL,
-    t2 FLOAT NOT NULL,
-    t3 FLOAT NOT NULL,
-    cur FLOAT NOT NULL,
-    primary key (id));"
+    t1 FLOAT NOT NULL,t2 FLOAT NOT NULL,t3 FLOAT NOT NULL,cur FLOAT NOT NULL,primary key (id))"
 $conn->query($sql);
 printf("Table myCity successfully created.\n");
 

@@ -35,6 +35,8 @@ foreach ($users as $user) {
 
 }
 
+echo "<br>";
+
 // select query
 $sql = 'SELECT * FROM Exp1';
 

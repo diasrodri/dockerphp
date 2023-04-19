@@ -50,7 +50,15 @@ if ($result = $conn->query($sql)) {
         $users[] = $data;
     }
 }
+foreach ($users as $user) {
+    echo "<br>";
+    $stringData = $user->id . " " . $user->reg_date;
+    $stringData = $stringData . " " . $user->t1 . " " . $user->t2;
+    $stringData = $stringData . " " . $user->t3. " " . $user->cur;
+    echo $stringData;
+    echo "<br>";
 
+}
 
 ?>
 

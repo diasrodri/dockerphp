@@ -75,23 +75,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-id int not null auto_increment,
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-t1 FLOAT NOT NULL,
-t2 FLOAT NOT NULL,
-t3 FLOAT NOT NULL,
-cur FLOAT NOT NULL,
-primary key (id)
-
 // sql to create table
-$sql = "CREATE TABLE Exp3 (
-id int not null auto_increment,
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-t1 FLOAT NOT NULL,
-t2 FLOAT NOT NULL,
-t3 FLOAT NOT NULL,
-cur FLOAT NOT NULL,
-primary key (id)
+$sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 
 if ($conn->query($sql) === TRUE) {

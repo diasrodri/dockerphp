@@ -47,10 +47,9 @@ $conn = new mysqli($host, $user, $pass, $mydatabase);
 $conn->query("CREATE TEMPORARY TABLE Exp1 LIKE caixatermica");
 printf("Table myCity successfully created.\n");
 
-/* Select queries return a resultset */
-$result = $mysqli->query("SELECT * FROM caixatermica LIMIT 10");
-printf("Select returned %d rows.\n", $result->num_rows);
-
+$conn->query("insert into `caixatermica` (reg_date, t1, t2, t3, cur) values
+    (CURRENT_TIMESTAMP,"0.0","0.0","0.0","0.0");
+    ");
 
 
 ?>

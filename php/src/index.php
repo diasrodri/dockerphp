@@ -37,7 +37,7 @@ foreach ($users as $user) {
 
 echo "<br>";
 
-// select query
+/* select query
 $sql = "SELECT * FROM Exp4";
 
 if ($result = $conn->query($sql)) {
@@ -55,6 +55,6 @@ foreach ($users1 as $user) {
     echo "<br>";
 
 }
-
+*/
 
 ?>

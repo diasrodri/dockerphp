@@ -43,11 +43,22 @@ $mydatabase = 'caixatermica';
 $conn = new mysqli($host, $user, $pass, $mydatabase);
 //$mysqli = new mysqli("localhost", "my_user", "my_password", "world");
 
-/* Create table doesn't return a resultset */
-$conn->query("CREATE TEMPORARY TABLE Exp1 LIKE caixatermica");
+$sql="create table Exp1 (
+    id int not null auto_increment,
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    t1 FLOAT NOT NULL,
+    t2 FLOAT NOT NULL,
+    t3 FLOAT NOT NULL,
+    cur FLOAT NOT NULL,
+    primary key (id));"
+$conn->query($sql);
 printf("Table myCity successfully created.\n");
 
 $sql="insert into caixatermica (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
+$conn->query($sql);
+printf("Table myCity successfully created.\n");
+
+$sql="insert into Exp1 (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
 $conn->query($sql);
 printf("Table myCity successfully created.\n");
 

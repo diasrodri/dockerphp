@@ -1,6 +1,6 @@
 <?php
-$myfile = fopen("web_ctr.txt", "r");
-$contents = fread($myfile, filesize($myfile));
-echo $contents;
-fclose($myfile);
+$filename = "web_ctr.txt";
+$handle = fopen($filename, "r");
+$contents = fread($handle, filesize($filename));
+fclose($handle);
 ?>

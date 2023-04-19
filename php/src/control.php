@@ -1,6 +1,6 @@
 <?php
 $filename = "web_ctr.txt";
-echo $filename;
+//echo $filename;
 
 $handle = fopen($filename, "r");
 echo $handle;

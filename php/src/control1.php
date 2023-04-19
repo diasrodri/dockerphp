@@ -47,14 +47,9 @@ $conn = new mysqli($host, $user, $pass, $mydatabase);
 $conn->query("CREATE TEMPORARY TABLE Exp1 LIKE caixatermica");
 printf("Table Exp1 successfully created.\n");
 
-/* Select queries return a resultset */
-$result = $mysqli->query("SELECT * FROM Exp1");
-printf("Select returned %d rows.\n", $result->num_rows);
-
 
 // select query
-//$sql = 'SELECT * FROM caixatermica';
-$sql = 'SHOW TABLES FROM caixatermica';
+$sql = 'SELECT * FROM Exp1';
 
 if ($result = $conn->query($sql)) {
     while ($data = $result->fetch_object()) {
@@ -62,6 +57,15 @@ if ($result = $conn->query($sql)) {
     }
 }
 
+foreach ($users as $user) {
+    echo "<br>";
+    $stringData = $user->id . " " . $user->reg_date;
+    $stringData = $stringData . " " . $user->t1 . " " . $user->t2;
+    $stringData = $stringData . " " . $user->t3. " " . $user->cur;
+    echo $stringData;
+    echo "<br>";
+
+}
 
 
 ?>

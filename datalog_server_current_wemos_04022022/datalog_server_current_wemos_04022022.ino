@@ -312,7 +312,7 @@ void loop() {
  
   http.end();  //Close connection
 ///*//=======================================================================
-  Link1 = "/control1.php";
+  Link1 = "/control.php";
   Serial.println(Link1);
   
   http.begin(wifiClient, host, port, Link1);     //Specify request destination

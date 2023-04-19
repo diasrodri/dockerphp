@@ -1,6 +1,6 @@
 <?php
 $filename = "/home/caixatermica/dockerphp/php/src/web_ctr.txt";
-//echo $filename;
+echo $filename;
 
 $handle = fopen($filename, "r");
 //echo $handle;

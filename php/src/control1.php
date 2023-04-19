@@ -21,6 +21,58 @@ fwrite($myfile, $txt);
 $txt = $_POST['cname'];
 fwrite($myfile, $txt);
 fclose($myfile);
+
+
+// The MySQL service named in the docker-compose.yml.
+$host = 'dbct';
+// Database use name
+$user = 'radias';
+//database user password
+$pass = 'radias';
+// database name
+$mydatabase = 'caixatermica';
+// check the mysql connection status
+$conn = new mysqli($host, $user, $pass, $mydatabase);
+
+// select query
+$sql = 'SELECT * FROM caixatermica';
+$result = mysql_query($sql);
+
+if ($result = $conn->query($sql)) {
+    while ($data = $result->fetch_object()) {
+        $users[] = $data;
+    }
+}
+
+foreach ($users as $user) {
+    echo "<br>";
+    $stringData = $user->id . " " . $user->reg_date;
+    $stringData = $stringData . " " . $user->t1 . " " . $user->t2;
+    $stringData = $stringData . " " . $user->t3. " " . $user->cur;
+    echo $stringData;
+    echo "<br>";
+
+}
+
+$sql = "SHOW TABLES FROM $mydatabase";
+$result = mysql_query($sql);
+if ($result = $conn->query($sql)) {
+    while ($data = $result->fetch_object()) {
+        $users[] = $data;
+    }
+}
+
+foreach ($users as $user) {
+    echo "<br>";
+    $stringData = $user->id . " " . $user->reg_date;
+    $stringData = $stringData . " " . $user->t1 . " " . $user->t2;
+    $stringData = $stringData . " " . $user->t3. " " . $user->cur;
+    echo $stringData;
+    echo "<br>";
+
+}
+
+
 ?>
 
 </body>

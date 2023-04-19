@@ -55,7 +55,7 @@ primary key (id)
 )";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table MyGuests created successfully";
+  echo "Table Exp2 created successfully";
 } else {
   echo "Error creating table: " . $conn->error;
 }
@@ -65,6 +65,37 @@ $conn->query($sql);
 printf("Table myCity successfully created.\n");
 
 $conn->close();
+
+
+$phpconnect = mysqli_connect($host,$user, $pass);
+if (mysqli_connect_errno())
+{
+echo "Connection Failed; " . mysqli_connect_error();
+}
+else
+{
+echo "Connection Established.<br>";
+ 
+$phpdatabase = "CREATE TABLE MyFriends (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(20) NOT NULL,
+lastname VARCHAR(20) NOT NULL,
+email VARCHAR(50))";
+ 
+if(mysqli_query( $phpconnect,$phpdatabase))
+{  
+echo "Table Created successfully.<br>";  
+}
+else
+{  
+echo "Table Creation Failed; ".mysqli_error($phpconnect);  
+}  
+}
+ 
+mysqli_close($phpconnect);
+echo “Connection Closed.”
+
+
 
 ?>
 

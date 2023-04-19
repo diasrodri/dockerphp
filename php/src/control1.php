@@ -43,22 +43,16 @@ $mydatabase = 'caixatermica';
 $conn = new mysqli($host, $user, $pass, $mydatabase);
 
 // select query
-$sql = 'SELECT * FROM caixatermica';
+//$sql = 'SELECT * FROM caixatermica';
+$sql = 'SHOW TABLES FROM caixatermica';
 
 if ($result = $conn->query($sql)) {
     while ($data = $result->fetch_object()) {
         $users[] = $data;
+        echo $data;
     }
 }
-foreach ($users as $user) {
-    echo "<br>";
-    $stringData = $user->id . " " . $user->reg_date;
-    $stringData = $stringData . " " . $user->t1 . " " . $user->t2;
-    $stringData = $stringData . " " . $user->t3. " " . $user->cur;
-    echo $stringData;
-    echo "<br>";
 
-}
 
 ?>
 

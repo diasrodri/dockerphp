@@ -10,6 +10,10 @@ Coolers: <input type="text" name="cname" value="Con" />Digite: Con ou Coff<br><b
 
 
 <?php
+
+
+
+
 echo $_POST['pname'] . PHP_EOL;
 echo $_POST['bname'] . PHP_EOL;
 echo $_POST['cname'] . PHP_EOL;
@@ -23,7 +27,29 @@ fwrite($myfile, $txt);
 fclose($myfile);
 
 
+// The MySQL service named in the docker-compose.yml.
+$host = 'dbct';
 
+// Database use name
+$user = 'radias';
+
+//database user password
+$pass = 'radias';
+
+// database name
+$mydatabase = 'caixatermica';
+// check the mysql connection status
+
+$conn = new mysqli($host, $user, $pass, $mydatabase);
+
+// select query
+$sql = 'SELECT * FROM caixatermica';
+
+if ($result = $conn->query($sql)) {
+    while ($data = $result->fetch_object()) {
+        $users[] = $data;
+    }
+}
 
 
 ?>

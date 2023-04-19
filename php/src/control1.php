@@ -93,7 +93,7 @@ echo "Table Creation Failed; ".mysqli_error($phpconnect);
 }
  
 mysqli_close($phpconnect);
-echo “Connection Closed.”
+echo "Connection Closed.";
 
 
 

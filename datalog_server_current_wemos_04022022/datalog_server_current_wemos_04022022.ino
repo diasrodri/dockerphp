@@ -322,7 +322,7 @@ void loop() {
  
   Serial.println(httpCode1);   //Print HTTP return code
   Serial.print("payload1=");
- // Serial.println(payload1);    //Print request response payload
+  Serial.println(payload1);    //Print request response payload
 
   Control(payload1);
   

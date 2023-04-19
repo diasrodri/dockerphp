@@ -56,11 +56,11 @@ primary key (id)
 
 if ($conn->query($sql) === TRUE) {
   echo "<br>";
-  echo "Table Exp2 created successfully". PHP_EOL.;
+  echo "Table Exp2 created successfully". PHP_EOL.";
   echo "<br>";
 } else {
   echo "<br>";
-  echo "Error creating table: " . $conn->error. PHP_EOL.;
+  echo "Error creating table: " . $conn->error. PHP_EOL."";
   echo "<br>";
 }
 

@@ -170,13 +170,13 @@ void setup() {
 
  void Control(String payload1){
   if (payload1=="PoffBoffCoff\n") {
-    //Serial.println("000");
+    Serial.println("000");
     digitalWrite(Pel, LOW); // ativa o pino digital 13
-    //Serial.println(digitalRead(Pel));
+    Serial.println(digitalRead(Pel));
     digitalWrite(Bom, LOW); // ativa o pino digital 13
-    //Serial.println(digitalRead(Bom));
+    Serial.println(digitalRead(Bom));
     digitalWrite(Col, LOW); // ativa o pino digital 13
-    //Serial.println(digitalRead(Bom));
+    Serial.println(digitalRead(Bom));
   }
   if (payload1=="PoffBoffCon\n" ) {
     //Serial.println("001");
@@ -233,13 +233,13 @@ void setup() {
     //Serial.println(digitalRead(Col));
     }
    if (payload1=="PonBonCon\n"  ) {
-    //Serial.println("111");
+    Serial.println("111");
     digitalWrite(Pel, HIGH); // ativa o pino digital 13
-    //Serial.println(digitalRead(Pel));
+    Serial.println(digitalRead(Pel));
     digitalWrite(Bom, HIGH); // ativa o pino digital 13
-    //Serial.println(digitalRead(Bom));
+    Serial.println(digitalRead(Bom));
     digitalWrite(Col, HIGH); // ativa o pino digital 13
-    //Serial.println(digitalRead(Col));
+    Serial.println(digitalRead(Col));
     }
  }
 
@@ -322,6 +322,7 @@ void loop() {
  
   Serial.println(httpCode1);   //Print HTTP return code
   Serial.print("payload1=");
+  payload1="PonBonCon\n";
   Serial.println(payload1);    //Print request response payload
 
   Control(payload1);

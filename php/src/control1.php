@@ -52,9 +52,6 @@ if ($result = $conn->query($sql)) {
         $users[] = $data;
     }
 
-    while ($row = mysql_fetch_row($result)) {
-        echo "Table: {$row[0]}\n";
-    }
 }
 
 

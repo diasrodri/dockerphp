@@ -23,27 +23,6 @@ fwrite($myfile, $txt);
 fclose($myfile);
 
 
-// The MySQL service named in the docker-compose.yml.
-$host = 'dbct';
-// Database use name
-$user = 'radias';
-//database user password
-$pass = 'radias';
-// database name
-$mydatabase = 'caixatermica';
-// check the mysql connection status
-$conn = new mysqli($host, $user, $pass, $mydatabase);
-
-// select query
-$sql = 'SELECT * FROM caixatermica';
-$result = mysql_query($sql);
-
-if ($result = $conn->query($sql)) {
-    while ($data = $result->fetch_object()) {
-        $users[] = $data;
-    }
-}
-
 
 
 

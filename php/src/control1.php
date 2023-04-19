@@ -55,14 +55,20 @@ primary key (id)
 )";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table Exp2 created successfully";
+  echo "<br>";
+  echo "Table Exp2 created successfully". PHP_EOL.;
+  echo "<br>";
 } else {
-  echo "Error creating table: " . $conn->error;
+  echo "<br>";
+  echo "Error creating table: " . $conn->error. PHP_EOL.;
+  echo "<br>";
 }
 
 $sql="insert into Exp2 (reg_date, t1, t2, t3, cur) values (CURRENT_TIMESTAMP,1.0,1.0,1.0,1.0)";
 $conn->query($sql);
+echo "<br>";
 printf("Table myCity successfully created.\n");
+echo "<br>" . PHP_EOL.;
 
 $conn->close();
 
@@ -86,11 +92,11 @@ reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 
 if ($conn->query($sql) === TRUE) {
   echo "<br>";
-  echo "Table MyGuests created successfully";
+  echo "Table MyGuests created successfully". PHP_EOL.;
   echo "<br>";
 } else {
   echo "<br>";
-  echo "Error creating table: " . $conn->error;
+  echo "Error creating table: " . $conn->error. PHP_EOL.;
   echo "<br>";
 }
 
